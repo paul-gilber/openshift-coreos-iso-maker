@@ -1,0 +1,35 @@
+---
+gateway: 10.0.0.1
+netmask: 255.255.255.0
+# VMWare default ens192
+# KVM default ens3
+# Libvirt default enp1s0
+# Intel NUC default eno1
+interface: ens192
+dns:
+  - 8.8.8.8
+  - 8.8.4.4
+webserver_url: 10.0.0.2
+webserver_port: 8080
+
+# Ignition subpath in http server (optionnal, defaults to nothing)
+webserver_ignition_path: /ignition/cluster1
+
+# Drive to install RHCOS
+# Libvirt - can be vda
+install_drive: sda
+
+# Timeout for selection menu during first boot
+# '-1' for infinite timeout. Default '10'
+boot_timeout: 10
+
+# Chose the binary architecture
+# x86_64 or ppc64le
+arch: "x86_64"
+
+# https://mirror.openshift.com/pub/openshift-v4/x86_64/dependencies/rhcos/4.10/
+ocp_version: 4.10.37
+iso_checksum: 20322671ce6d178f0750d4f4bfef118df51c414ba92f6dfe30134c98ae9b0605
+iso_name: rhcos-{{ ocp_version }}-x86_64-live.x86_64.iso
+rhcos_bios: rhcos-{{ ocp_version }}-x86_64-metal.x86_64.raw.gz
+...

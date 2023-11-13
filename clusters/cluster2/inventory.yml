@@ -1,0 +1,45 @@
+---
+all:
+  children:
+    bootstrap:
+      hosts:
+        bastion.cluster2.example.com:
+          ipv4: 10.1.0.3
+    
+    master:
+      hosts:
+        master1.cluster2.example.com:
+          ipv4: 10.1.0.4
+
+        master2.cluster2.example.com:
+          ipv4: 10.1.0.5
+
+        master3.cluster2.example.com:
+          ipv4: 10.1.0.6
+        
+    worker:
+      hosts:
+        ###########################################
+        #     I N F R A   N O D E S               #
+        ###########################################
+        infra1.cluster2.example.com:
+          ipv4: 10.1.0.7
+
+        infra2.cluster2.example.com:
+          ipv4: 10.1.0.8
+
+        infra3.cluster2.example.com:
+          ipv4: 10.1.0.9
+
+        ###########################################
+        #            W O R K E R   N O D E S      #
+        ###########################################
+        worker1.cluster2.example.com:
+          ipv4: 10.1.0.10
+        
+        worker2.cluster2.example.com:
+          ipv4: 10.1.0.11
+          
+        worker3.cluster2.example.com:
+          ipv4: 10.1.0.12
+...

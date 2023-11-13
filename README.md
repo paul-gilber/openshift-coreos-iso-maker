@@ -6,6 +6,21 @@ they couldn't update which may or may not be related to their use of this repo. 
 Also note that in upcoming version of OpenShift, there will be the supported ability customize the ISO installer.
 See [here](https://coreos.github.io/coreos-installer/cmd/iso/#coreos-installer-iso-customize) for more details
 
+# Create ISO via create-iso.sh
+Prerequisites:
+1. [Vagrant](https://developer.hashicorp.com/vagrant/tutorials/getting-started/getting-started-install)
+2. [Virtualbox](https://www.virtualbox.org/manual/ch02.html)
+
+Steps:
+1. Run [create-iso.sh](./scripts/create-iso.sh)
+```sh
+# Get help
+./scripts/create-iso.sh -h
+
+# Generate ISO for all clusters
+./scripts/create-iso.sh -a
+```
+
 # coreos-iso-maker V2.10
 Update this version:  This version supports the new OCP 4.6 ISO.  There was a name change as well as a change
 in the underlying directory structure of the ISO which broke everything so this is no longer backwards compatible.
